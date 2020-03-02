@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test for tensorflow.js</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+    <script src="c4src.js"></script>
+
+    <style>
+        #c4Board {
+            border-collapse: collapse;
+            border: 4px solid black;
+        }
+
+        .p1{
+            background-color: red;
+        }
+        .p1_win{
+            background-color: #991919;
+        }
+
+        .p2{
+            background-color: yellow;
+        }
+        .p2_win{
+            background-color: #998D33;
+        }
+        th, td {
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Deep RL Demo</h1>
+<hr>
+<button type="button" onclick="ai_self_play()">self play</button>
+<br>
+<button type="button" onclick="reset_game()">reset</button>
+
+
+<p id="self_play_counter">
+
+</p>
+<span id="msg">Select a cell!</span>
+<div id="boardContainer"></div>
+
+</body>
+
+<script>
+    initView()
+    updateView(c4m)
+</script>
+
+</html>
